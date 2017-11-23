@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.749" tests="7" errors="3" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/opt/jdk1.8.0_92/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.92-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/piot/vvsworkspace/reunions"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/piot/vvsworkspace/reunions"/>
+    <property name="java.runtime.version" value="1.8.0_92-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/opt/jdk1.8.0_92/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/home/piot/.m2/wrapper/dists/apache-maven-3.3.9-bin/2609u9g41na2l7ogackmif6fj2/apache-maven-3.3.9/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.4.0-98-generic"/>
+    <property name="user.home" value="/home/piot"/>
+    <property name="user.timezone" value="Europe/Madrid"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="piot"/>
+    <property name="java.class.path" value="/home/piot/vvsworkspace/reunions/.mvn/wrapper/maven-wrapper.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/opt/jdk1.8.0_92/jre"/>
+    <property name="sun.java.command" value="org.apache.maven.wrapper.MavenWrapperMain clean test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_92"/>
+    <property name="java.ext.dirs" value="/opt/jdk1.8.0_92/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/opt/jdk1.8.0_92/jre/lib/resources.jar:/opt/jdk1.8.0_92/jre/lib/rt.jar:/opt/jdk1.8.0_92/jre/lib/sunrsasign.jar:/opt/jdk1.8.0_92/jre/lib/jsse.jar:/opt/jdk1.8.0_92/jre/lib/jce.jar:/opt/jdk1.8.0_92/jre/lib/charsets.jar:/opt/jdk1.8.0_92/jre/lib/jfr.jar:/opt/jdk1.8.0_92/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/home/piot/.m2/wrapper/dists/apache-maven-3.3.9-bin/2609u9g41na2l7ogackmif6fj2/apache-maven-3.3.9"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="getNonExistingParticipante" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.063"/>
+  <testcase name="getParticipante" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.03"/>
+  <testcase name="createParticipante" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.039">
+    <error message="Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at es.udc.reunions.web.rest.ParticipanteResource.createParticipante(ParticipanteResource.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:155)
+	at es.udc.reunions.web.rest.ParticipanteResourceIntTest.createParticipante(ParticipanteResourceIntTest.java:126)
+</error>
+    <system-out><![CDATA[Hibernate: insert into grupo (id, nombre) values (null, ?)
+Hibernate: insert into organo (id, descripcion, grupo_id, nombre) values (null, ?, ?, ?)
+Hibernate: insert into sesion (id, descripcion, lugar, numero, organo_id, primera_convocatoria, segunda_convocatoria) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into cargo (id, nombre) values (null, ?)
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, dni, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select participan0_.id as id1_11_, participan0_.asistencia as asistenc2_11_, participan0_.cargo_id as cargo_id4_11_, participan0_.observaciones as observac3_11_, participan0_.sesion_id as sesion_i5_11_, participan0_.user_id as user_id6_11_ from participante participan0_
+2017-11-19 19:19:31.303 DEBUG 13603 --- [           main] e.u.r.web.rest.ParticipanteResource      : REST request to save Participante : Participante{id=null, asistencia='asiste', observaciones='AAAAA'}
+]]></system-out>
+  </testcase>
+  <testcase name="getAllParticipantes" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.037"/>
+  <testcase name="deleteParticipante" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.231">
+    <error message="Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at es.udc.reunions.web.rest.ParticipanteResource.deleteParticipante(ParticipanteResource.java:170)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:894)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:713)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:155)
+	at es.udc.reunions.web.rest.ParticipanteResourceIntTest.deleteParticipante(ParticipanteResourceIntTest.java:221)
+</error>
+    <system-out><![CDATA[Hibernate: insert into grupo (id, nombre) values (null, ?)
+Hibernate: insert into organo (id, descripcion, grupo_id, nombre) values (null, ?, ?, ?)
+Hibernate: insert into sesion (id, descripcion, lugar, numero, organo_id, primera_convocatoria, segunda_convocatoria) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into cargo (id, nombre) values (null, ?)
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, dni, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2017-11-19 19:19:31.386 DEBUG 13603 --- [           main] e.u.r.service.ParticipanteService        : Request to save Participante : Participante{id=null, asistencia='asiste', observaciones='AAAAA'}
+Hibernate: insert into participante (id, asistencia, cargo_id, observaciones, sesion_id, user_id) values (null, ?, ?, ?, ?, ?)
+Hibernate: select participan0_.id as id1_11_, participan0_.asistencia as asistenc2_11_, participan0_.cargo_id as cargo_id4_11_, participan0_.observaciones as observac3_11_, participan0_.sesion_id as sesion_i5_11_, participan0_.user_id as user_id6_11_ from participante participan0_
+2017-11-19 19:19:31.595 DEBUG 13603 --- [           main] e.u.r.web.rest.ParticipanteResource      : REST request to delete Participante : 3
+2017-11-19 19:19:31.595 DEBUG 13603 --- [           main] e.u.r.service.ParticipanteService        : Request to get Participante : 3
+]]></system-out>
+  </testcase>
+  <testcase name="updateParticipante" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.161">
+    <error message="Request processing failed; nested exception is java.lang.NullPointerException" type="org.springframework.web.util.NestedServletException">org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at es.udc.reunions.web.rest.ParticipanteResource.updateParticipante(ParticipanteResource.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:155)
+	at es.udc.reunions.web.rest.ParticipanteResourceIntTest.updateParticipante(ParticipanteResourceIntTest.java:195)
+</error>
+    <system-out><![CDATA[Hibernate: insert into grupo (id, nombre) values (null, ?)
+Hibernate: insert into organo (id, descripcion, grupo_id, nombre) values (null, ?, ?, ?)
+Hibernate: insert into sesion (id, descripcion, lugar, numero, organo_id, primera_convocatoria, segunda_convocatoria) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into cargo (id, nombre) values (null, ?)
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, dni, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2017-11-19 19:19:31.684 DEBUG 13603 --- [           main] e.u.r.service.ParticipanteService        : Request to save Participante : Participante{id=null, asistencia='asiste', observaciones='AAAAA'}
+Hibernate: insert into participante (id, asistencia, cargo_id, observaciones, sesion_id, user_id) values (null, ?, ?, ?, ?, ?)
+Hibernate: select participan0_.id as id1_11_, participan0_.asistencia as asistenc2_11_, participan0_.cargo_id as cargo_id4_11_, participan0_.observaciones as observac3_11_, participan0_.sesion_id as sesion_i5_11_, participan0_.user_id as user_id6_11_ from participante participan0_
+2017-11-19 19:19:31.769 DEBUG 13603 --- [           main] e.u.r.web.rest.ParticipanteResource      : REST request to update Participante : Participante{id=4, asistencia='falta', observaciones='BBBBB'}
+]]></system-out>
+  </testcase>
+  <testcase name="searchParticipante" classname="es.udc.reunions.web.rest.ParticipanteResourceIntTest" time="0.188"/>
+</testsuite>

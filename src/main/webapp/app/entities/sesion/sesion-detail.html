@@ -1,0 +1,178 @@
+
+<div>
+    <h2><span data-translate="reunionsApp.sesion.detail.title">Sesion</span> {{vm.sesion.numero}} - {{vm.sesion.organo.nombre}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="reunionsApp.sesion.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.sesion.numero}}</span>
+        </dd>
+        <dt><span data-translate="reunionsApp.sesion.primeraConvocatoria">Primera Convocatoria</span></dt>
+        <dd>
+            <span>{{vm.sesion.primeraConvocatoria | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="reunionsApp.sesion.segundaConvocatoria">Segunda Convocatoria</span></dt>
+        <dd>
+            <span>{{vm.sesion.segundaConvocatoria | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="reunionsApp.sesion.lugar">Lugar</span></dt>
+        <dd>
+            <span>{{vm.sesion.lugar}}</span>
+        </dd>
+        <dt><span data-translate="reunionsApp.sesion.descripcion">Descripcion</span></dt>
+        <dd>
+           <pre>{{vm.sesion.descripcion}}</pre>
+        </dd>
+        <dt><span data-translate="reunionsApp.sesion.organo">Organo</span></dt>
+        <dd>
+            <a ui-sref="organo-detail({id:vm.sesion.organo.id})">{{vm.sesion.organo.nombre}}</a>
+        </dd>
+        <dt><span data-translate="reunionsApp.sesion.documentos">Documentos</span></dt>
+        <dd>
+            <div class="row">
+                <div class="col-xs-8">
+                    <li ng-repeat="documento in vm.documentos">
+                        <a ng-if="documento.archivo" ng-click="vm.openFile(documento.archivoContentType, documento.archivo)">{{documento.nombre}}</a>
+                        <span ng-if="documento.archivo">{{documento.archivoContentType}}, {{vm.byteSize(documento.archivo)}}</span>
+                        <button type="submit"
+                                ui-sref="documento.delete({idd:documento.id})"
+                                class="btn btn-link btn-xs"
+                                ng-show="vm.admin">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </li>
+                </div>
+
+                <div class="col-xs-4 no-padding-right">
+                <button class="btn btn-primary" ui-sref="documento.new({sesion:vm.sesion})" ng-show="vm.admin">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="reunionsApp.documento.home.createLabel">
+                            Create new Documento
+                        </span>
+                </button>
+                </div>
+
+            </div>
+        </dd>
+    </dl>
+
+    <h3><span data-translate="reunionsApp.sesion.participantes" id="titulo">Participantes</span></h3>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-9 no-padding-left">
+                <button class="btn btn-primary" ui-sref="participante.new({sesion:vm.sesion})" ng-show="vm.admin" ng-disabled="vm.marcando">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="reunionsApp.participante.home.createLabel">
+                    Add new participante
+                </span>
+                </button>
+
+                <button class="btn btn-primary" ng-click="vm.marcarAsistencia()" ng-show="vm.admin">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="hidden-xs" data-translate="reunionsApp.sesion.marcar" ng-if="!vm.marcando">
+                    Marcar asistencia
+                    </span>
+                    <span class="hidden-xs" data-translate="reunionsApp.sesion.guardar" ng-if="vm.marcando">
+                    Guardar asistencia
+                    </span>
+                </button>
+
+                <button class="btn btn-info" ng-click="vm.notificar(vm.sesion.id)" ng-show="vm.admin" ng-disabled="vm.marcando">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span class="hidden-xs"  data-translate="reunionsApp.sesion.notificar">
+                    Notificar
+                </span>
+                </button>
+
+                <button class="btn btn-info" ng-click="vm.exportar()" ng-disabled="vm.marcando">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="reunionsApp.sesion.exportar">
+                    Exportar
+                    </span>
+                </button>
+            </div>
+
+            <div class="col-xs-3 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" ng-model="q" id="search" class="form-control" placeholder="{{ 'reunionsApp.participante.home.search' | translate }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse">
+                <th jh-sort-by="user.lastName|noAccents"><span data-translate="reunionsApp.participante.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="user.email" ng-if="!vm.marcando"><span data-translate="reunionsApp.participante.email">E-mail</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="cargo.nombre|noAccents" ng-if="!vm.marcando"><span data-translate="reunionsApp.participante.cargo">Cargo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="asistencia|noAccents"><span data-translate="reunionsApp.participante.asistencia">Asistencia</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="observaciones|noAccents" ng-if="!vm.marcando"><span data-translate="reunionsApp.participante.observaciones">Observaciones</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th ng-if="!vm.marcando"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="participante in vm.participantes | orderBy:vm.predicate:!vm.reverse | filter:q:vm.qFn | itemsPerPage: 20">
+                <td>
+                    <a ui-sref="user-management-detail({login:participante.user.login})">{{participante.user.lastName}}, {{participante.user.firstName}}</a>
+                </td>
+                <td ng-if="!vm.marcando">
+                    {{participante.user.email}}
+                </td>
+                <td ng-if="!vm.marcando">
+                    {{participante.cargo.nombre}}
+                </td>
+                <td ng-if="vm.marcando">
+                    <label class="radio-inline">
+                    <input type="radio" ng-model="participante.asistencia" value="asiste">asiste</label>
+                    <label class="radio-inline">
+                    <input type="radio" ng-model="participante.asistencia" value="falta">falta</label>
+                    <label class="radio-inline">
+                    <input type="radio" ng-model="participante.asistencia" value="disculpa">disculpa</label>
+                </td>
+                <td ng-if="!vm.marcando">
+                    {{participante.asistencia}}
+                </td>
+                <td ng-if="!vm.marcando">{{participante.observaciones}}</td>
+                <td ng-if="!vm.marcando" class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="participante.edit({idp:participante.id})"
+                                class="btn btn-primary btn-sm"
+                                ng-show="vm.admin">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="participante.delete({idp:participante.id})"
+                                class="btn btn-danger btn-sm"
+                                ng-show="vm.admin">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <dir-pagination-controls on-page-change="vm.goUp('titulo')"></dir-pagination-controls>
+    </div>
+
+    <button type="submit" ng-click="vm.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ng-disabled="vm.marcando" ui-sref="sesion-detail.edit({id:vm.sesion.id})" class="btn btn-primary" ng-show="vm.admin">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

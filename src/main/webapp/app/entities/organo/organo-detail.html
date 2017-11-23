@@ -1,0 +1,218 @@
+
+<div>
+    <h2>{{vm.organo.nombre}}</h2>
+    <hr>
+    <jhi-alert></jhi-alert>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="reunionsApp.organo.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{vm.organo.descripcion}}</span>
+        </dd>
+        <dt><span data-translate="reunionsApp.organo.grupo">Grupo</span></dt>
+        <dd>
+            <span>{{vm.organo.grupo.nombre}}</span>
+        </dd>
+    </dl>
+
+
+    <h3><span data-translate="reunionsApp.organo.miembros" id="tituloActuales">Miembros actuales</span></h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="miembro.new({organo:vm.organo})" has-authority="ROLE_ADMIN">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="reunionsApp.miembro.home.createLabel">
+                    Add new miembro
+                </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" ng-model="q" id="search" class="form-control" placeholder="{{ 'reunionsApp.miembro.home.search' | translate }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse">
+                <th jh-sort-by="user.lastName|noAccents"><span data-translate="reunionsApp.miembro.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="cargo.nombre|noAccents"><span data-translate="reunionsApp.miembro.cargo">Cargo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="fechaAlta"><span data-translate="reunionsApp.miembro.fechaAlta">Fecha Alta</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="observaciones|noAccents"><span data-translate="reunionsApp.miembro.observaciones">Observaciones</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="miembro in vm.miembros | orderBy:vm.predicate:!vm.reverse | filter:q:vm.qFn | itemsPerPage: 40" pagination-id="actuales">
+                <td>
+                    <a ui-sref="user-management-detail({login:miembro.user.login})">{{miembro.user.lastName}}, {{miembro.user.firstName}}</a>
+                </td>
+                <td>
+                    {{miembro.cargo.nombre}}
+                </td>
+                <td>{{miembro.fechaAlta | date:'mediumDate'}}</td>
+                <td>{{miembro.observaciones}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="miembro.edit({idm:miembro.id})"
+                                class="btn btn-primary btn-sm"
+                                has-authority="ROLE_ADMIN">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="miembro.delete({idm:miembro.id})"
+                                class="btn btn-danger btn-sm"
+                                has-authority="ROLE_ADMIN">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <dir-pagination-controls pagination-id="actuales" on-page-change="vm.goUp('tituloActuales')"></dir-pagination-controls>
+    </div>
+
+    <hr>
+
+    <h3><span data-translate="reunionsApp.organo.miembrosAnteriores" id="tituloAnteriores">Miembros anteriores</span></h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" ng-model="qa" id="searchAnt" class="form-control" placeholder="{{ 'reunionsApp.miembro.home.search' | translate }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicateAnteriores" ascending="vm.reverseAnteriores">
+                <th jh-sort-by="user.lastName|noAccents"><span data-translate="reunionsApp.miembro.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="cargo.nombre|noAccents"><span data-translate="reunionsApp.miembro.cargo">Cargo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="fechaAlta"><span data-translate="reunionsApp.miembro.fechaAlta">Fecha Alta</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="fechaBaja"><span data-translate="reunionsApp.miembro.fechaBaja">Fecha Baja</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="observaciones|noAccents"><span data-translate="reunionsApp.miembro.observaciones">Observaciones</span> <span class="glyphicon glyphicon-sort"></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="miembro in vm.miembrosAnteriores | orderBy:vm.predicateAnteriores:!vm.reverseAnteriores | filter:qa:vm.qFn | itemsPerPage: 10" pagination-id="anteriores">
+                <td>
+                    <a ui-sref="user-management-detail({login:miembro.user.login})">{{miembro.user.lastName}}, {{miembro.user.firstName}}</a>
+                </td>
+                <td>
+                    {{miembro.cargo.nombre}}
+                </td>
+                <td>{{miembro.fechaAlta | date:'mediumDate'}}</td>
+                <td>{{miembro.fechaBaja | date:'mediumDate'}}</td>
+                <td>{{miembro.observaciones}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <dir-pagination-controls pagination-id="anteriores" on-page-change="vm.goUp('tituloAnteriores')"></dir-pagination-controls>
+    </div>
+
+    <hr>
+
+    <h3><span data-translate="reunionsApp.organo.sesiones" id="tituloSesiones">Sesiones</span></h3>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="sesion.new({organo:vm.organo})" ng-show="vm.admin">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="reunionsApp.sesion.home.createLabel">
+                    Add new sesion
+                </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" ng-model="qs" id="searchSes" class="form-control" placeholder="{{ 'reunionsApp.sesion.home.search' | translate }}">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicateSesiones" ascending="vm.reverseSesiones">
+                <th jh-sort-by="numero"><span data-translate="reunionsApp.sesion.numero">Numero</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="primeraConvocatoria"><span data-translate="reunionsApp.sesion.primeraConvocatoria">Primera Convocatoria</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="segundaConvocatoria"><span data-translate="reunionsApp.sesion.segundaConvocatoria">Segunda Convocatoria</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="lugar|noAccents"><span data-translate="reunionsApp.sesion.lugar">Lugar</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="sesion in vm.sesiones | orderBy:vm.predicateSesiones:!vm.reverseSesiones | filter:{numero:qs} | itemsPerPage: 10" pagination-id="sesiones">
+                <td><a ui-sref="sesion-detail({id:sesion.id})">{{sesion.numero}}</a></td>
+                <td>{{sesion.primeraConvocatoria | date:'medium'}}</td>
+                <td>{{sesion.segundaConvocatoria | date:'medium'}}</td>
+                <td>{{sesion.lugar}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="sesion-detail({id:sesion.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="sesion.edit({ids:sesion.id})"
+                                class="btn btn-primary btn-sm"
+                                ng-show="vm.admin">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="sesion.delete({ids:sesion.id})"
+                                class="btn btn-danger btn-sm"
+                                ng-show="vm.admin">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <dir-pagination-controls pagination-id="sesiones" on-page-change="vm.goUp('tituloSesiones')"></dir-pagination-controls>
+    </div>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" has-authority="ROLE_ADMIN" ui-sref="organo-detail.edit({id:vm.organo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

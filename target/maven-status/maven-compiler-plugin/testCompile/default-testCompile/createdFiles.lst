@@ -1,0 +1,14 @@
+es/udc/reunions/web/rest/GrupoResourceIntTest.class
+es/udc/reunions/service/UserServiceIntTest.class
+es/udc/reunions/web/rest/ParticipanteResourceIntTest.class
+es/udc/reunions/web/rest/MiembroResourceIntTest.class
+es/udc/reunions/security/SecurityUtilsUnitTest.class
+es/udc/reunions/web/rest/AccountResourceIntTest.class
+es/udc/reunions/config/elasticsearch/IndexReinitializer.class
+es/udc/reunions/web/rest/OrganoResourceIntTest.class
+es/udc/reunions/web/rest/TestUtil.class
+es/udc/reunions/web/rest/UserResourceIntTest.class
+es/udc/reunions/web/rest/DocumentoResourceIntTest.class
+es/udc/reunions/web/rest/SesionResourceIntTest.class
+es/udc/reunions/web/rest/CargoResourceIntTest.class
+es/udc/reunions/web/rest/AuditResourceIntTest.class

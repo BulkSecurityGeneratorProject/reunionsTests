@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: es.udc.reunions.service.UserServiceIntTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.581 sec - in es.udc.reunions.service.UserServiceIntTest

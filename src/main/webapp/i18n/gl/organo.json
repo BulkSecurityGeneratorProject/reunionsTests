@@ -1,0 +1,29 @@
+{
+    "reunionsApp": {
+        "organo" : {
+            "home": {
+                "title": "Órganos",
+                "createLabel": "Crear novo órgano",
+                "createOrEditLabel": "Crear ou editar órgano",
+                "search": "Buscar órgano"
+            },
+            "created": "Un novo órgano foi creado co identificador {{ param }}",
+            "updated": "Un órgano foi actualizado co identificador {{ param }}",
+            "deleted": "Un órgano foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar órgano {{ id }}?"
+            },
+            "detail": {
+                "title": "Órgano"
+            },
+            "nombre": "Nome",
+            "descripcion": "Descripción",
+            "grupo": "Grupo",
+            "miembro": "Membro",
+            "sesion": "Sesión",
+            "miembros": "Membros actuales",
+            "miembrosAnteriores": "Membros anteriores",
+            "sesiones": "Sesións"
+        }
+    }
+}

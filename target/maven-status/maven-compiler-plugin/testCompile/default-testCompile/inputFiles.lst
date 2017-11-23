@@ -1,0 +1,14 @@
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/security/SecurityUtilsUnitTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/TestUtil.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/UserResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/AuditResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/OrganoResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/ParticipanteResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/config/elasticsearch/IndexReinitializer.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/service/UserServiceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/DocumentoResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/CargoResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/AccountResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/SesionResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/GrupoResourceIntTest.java
+/home/piot/vvsworkspace/reunions/src/test/java/es/udc/reunions/web/rest/MiembroResourceIntTest.java

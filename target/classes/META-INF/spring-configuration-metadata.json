@@ -1,0 +1,286 @@
+{
+  "groups": [
+    {
+      "name": "jhipster",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties"
+    },
+    {
+      "name": "jhipster.async",
+      "sourceMethod": "getAsync()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Async"
+    },
+    {
+      "name": "jhipster.cache",
+      "sourceMethod": "getCache()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Cache"
+    },
+    {
+      "name": "jhipster.cache.ehcache",
+      "sourceMethod": "getEhcache()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Cache",
+      "type": "es.udc.reunions.config.JHipsterProperties$Cache$Ehcache"
+    },
+    {
+      "name": "jhipster.http",
+      "sourceMethod": "getHttp()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Http"
+    },
+    {
+      "name": "jhipster.http.cache",
+      "sourceMethod": "getCache()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Http",
+      "type": "es.udc.reunions.config.JHipsterProperties$Http$Cache"
+    },
+    {
+      "name": "jhipster.logging",
+      "sourceMethod": "getLogging()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Logging"
+    },
+    {
+      "name": "jhipster.logging.logstash",
+      "sourceMethod": "getLogstash()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Logging",
+      "type": "es.udc.reunions.config.JHipsterProperties$Logging$Logstash"
+    },
+    {
+      "name": "jhipster.mail",
+      "sourceMethod": "getMail()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Mail"
+    },
+    {
+      "name": "jhipster.metrics",
+      "sourceMethod": "getMetrics()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Metrics"
+    },
+    {
+      "name": "jhipster.metrics.graphite",
+      "sourceMethod": "getGraphite()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics",
+      "type": "es.udc.reunions.config.JHipsterProperties$Metrics$Graphite"
+    },
+    {
+      "name": "jhipster.metrics.jmx",
+      "sourceMethod": "getJmx()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics",
+      "type": "es.udc.reunions.config.JHipsterProperties$Metrics$Jmx"
+    },
+    {
+      "name": "jhipster.metrics.logs",
+      "sourceMethod": "getLogs()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics",
+      "type": "es.udc.reunions.config.JHipsterProperties$Metrics$Logs"
+    },
+    {
+      "name": "jhipster.metrics.spark",
+      "sourceMethod": "getSpark()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics",
+      "type": "es.udc.reunions.config.JHipsterProperties$Metrics$Spark"
+    },
+    {
+      "name": "jhipster.ribbon",
+      "sourceMethod": "getRibbon()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Ribbon"
+    },
+    {
+      "name": "jhipster.security",
+      "sourceMethod": "getSecurity()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Security"
+    },
+    {
+      "name": "jhipster.security.remember-me",
+      "sourceMethod": "getRememberMe()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Security",
+      "type": "es.udc.reunions.config.JHipsterProperties$Security$RememberMe"
+    },
+    {
+      "name": "jhipster.swagger",
+      "sourceMethod": "getSwagger()",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties",
+      "type": "es.udc.reunions.config.JHipsterProperties$Swagger"
+    }
+  ],
+  "hints": [],
+  "properties": [
+    {
+      "defaultValue": 2,
+      "name": "jhipster.async.core-pool-size",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 50,
+      "name": "jhipster.async.max-pool-size",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 10000,
+      "name": "jhipster.async.queue-capacity",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "16M",
+      "name": "jhipster.cache.ehcache.max-bytes-local-heap",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Cache$Ehcache",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 1461,
+      "name": "jhipster.http.cache.time-to-live-in-days",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Http$Cache",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.logging.logstash.enabled",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Logging$Logstash",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "jhipster.logging.logstash.host",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Logging$Logstash",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 5000,
+      "name": "jhipster.logging.logstash.port",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Logging$Logstash",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 512,
+      "name": "jhipster.logging.logstash.queue-size",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Logging$Logstash",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "reunions@localhost",
+      "name": "jhipster.mail.from",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.metrics.graphite.enabled",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "jhipster.metrics.graphite.host",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 2003,
+      "name": "jhipster.metrics.graphite.port",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "reunions",
+      "name": "jhipster.metrics.graphite.prefix",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": true,
+      "name": "jhipster.metrics.jmx.enabled",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Jmx",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.metrics.logs.enabled",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Logs",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.metrics.spark.enabled",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Spark",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "jhipster.metrics.spark.host",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Spark",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 9999,
+      "name": "jhipster.metrics.spark.port",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Metrics$Spark",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "jhipster.ribbon.display-on-active-profiles",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Ribbon",
+      "type": "java.lang.String[]"
+    },
+    {
+      "name": "jhipster.security.remember-me.key",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Security$RememberMe",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.contact-email",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.contact-name",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.contact-url",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "reunions API documentation",
+      "name": "jhipster.swagger.description",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.license",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.license-url",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.terms-of-service-url",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "reunions API",
+      "name": "jhipster.swagger.title",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "0.0.1",
+      "name": "jhipster.swagger.version",
+      "sourceType": "es.udc.reunions.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    }
+  ]
+}

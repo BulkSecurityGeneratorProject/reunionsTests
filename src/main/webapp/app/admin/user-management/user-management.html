@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="userManagement.home.title" id="titulo">Users</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="user-management.new" has-authority="ROLE_ADMIN">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="userManagement.home.createLabel">
+                        Create new User
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" ng-model="q" id="search" class="form-control" placeholder="{{ 'userManagement.home.search' | translate }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr>
+                <th><span data-translate="userManagement.lastName">Last name</span>, <span data-translate="userManagement.firstName">First name</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="user in vm.users | orderBy:'(lastName|noAccents)':false | filter:q:vm.qFn | itemsPerPage: 15">
+                <td><a ui-sref="user-management-detail({login:user.login})">{{user.lastName}}, {{user.firstName}}</a></td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="user-management-detail({login:user.login})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="user-management.edit({login:user.login})"
+                                class="btn btn-primary btn-sm"
+                                has-authority="ROLE_ADMIN">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="user-management.delete({login:user.login})"
+                                class="btn btn-danger btn-sm" ng-disabled="vm.currentAccount.login==user.login"
+                                has-authority="ROLE_ADMIN">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <dir-pagination-controls on-page-change="vm.goUp('titulo')"></dir-pagination-controls>
+    </div>
+</div>
